@@ -1,13 +1,3 @@
-canvas {
-    border: 5px solid rgb(0, 0, 0);
-    background-image: url("https://us.123rf.com/450wm/arybickii/arybickii1912/arybickii191200069/135308435-antiguo-fondo-de-videojuegos-retro-escenario-de-dise%C3%B1o-de-juegos-de-estilo-retro-cl%C3%A1sico-vector.jpg?ver=6");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 750px;
-    left: 500px;
-}
-
 .fondo {
     background: url("https://image.winudf.com/v2/image/Y29tLmFuZHJvbW8uZGV2Njc3NjIyLmFwcDcyNTU4N19zY3JlZW5fNV8xNTE2NjkxNzYwXzAxNQ/screen-5.jpg?fakeurl=1&type=.webp");
     background-position: center;
@@ -26,6 +16,6 @@ h1{
 }
 
 h3{
-    color: red;
+    color: rgb(251, 0, 255);
 }
 

@@ -7,12 +7,13 @@
     <title>CastroL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
 
-<body onload="startGame()">
+<body>
     <!--Page Title-->
     <div class="p-5 bg-light fondo">
         <h1 class="text-dark p-3 ">Nintendo Block Hopper</h1>
@@ -46,59 +47,75 @@
         </div>
     </nav>
 
-    <!--Cards-->
-    <div class="row row-cols-1 row-cols-md-2 g-4"
-        style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px;">
-        <div class="col ">
-            <div class="card btn-info shadow p-3 mb-5 bg-body rounded">
-                <div style="text-align: center;">
-                    <!--Button to Mario Kart's Official Site-->
-                    <a href="https://www.nintendo.com/es-mx/store/products/mario-kart-8-deluxe-switch/" class="button">
-                        <button type="button" class="btn btn-white">
-                            <img src="https://imagenes.elpais.com/resizer/NYJ04T2e3y5jKKwhsAMACeYpHO4=/414x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/K4QAJD5DN5DU5OMLUKOTGT736A.jpg"
-                                class="card-img-top" alt="...." style="max-height: 200px;">
-                        </button>
-                    </a>
-                </div>
-                <div class="card-body">
-                    <!--Random Text-->
-                    <h5 class="card-title text-center">MARIO KART</h5>
-                    <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipiscing elit per
-                        fermentum nullam, magnis odio turpis velit litora hendrerit cursus vehicula sodales, cum
-                        bibendum etiam facilisi in elementum ad facilisis rutrum.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card btn-info shadow p-3 mb-5 bg-body rounded ">
-                <div style="text-align: center;">
-                    <!--Button to Zelda's Official Site-->
-                    <a href="https://www.nintendo.com/es-mx/store/products/the-legend-of-zelda-breath-of-the-wild-switch/"
-                        class="button">
-                        <button type="button" class="btn btn-white">
-                            <img src="https://as01.epimg.net/meristation/imagenes/2021/02/21/reportajes/1613888485_682494_1613888565_noticia_normal.jpg"
-                                class="card-img-top" alt="..." style="max-height: 200px;">
-                        </button>
-                    </a>
-                </div>
-                <div class="card-body">
-                    <!--Random Text-->
-                    <h5 class="card-title text-center">ZELDA</h5>
-                    <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipiscing elit per
-                        fermentum nullam, magnis odio turpis velit litora hendrerit cursus vehicula sodales, cum
-                        bibendum etiam facilisi in elementum ad facilisis rutrum. </p>
+    <!--Formulario-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded">
+                    <div class="p-3 mb-2 bg-primary bg-gradient fw-bold text-white"> Sign up for free!</div>
+                    <form class="row g-3 needs-validation" novalidate>
+
+                        <div class="col-md-6 position-relative">
+                            <label for="nombre" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="nombre" value=""
+                                placeholder="Escriba sus nombres " required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">¡Campo válido!</div>
+                            <div class="invalid-tooltip">Debe completar los datos.</div>
+                        </div>
+
+                        <div class="col-md-6 position-relative">
+                            <label for="exampleFormControlInput1" class="form-label"> Email </label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="correo@gmail.com" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">¡Campo válido!</div>
+                            <div class="invalid-tooltip">Debe completar los datos.</div>
+                        </div>
+
+                        <div class="col-md-12 position-relative">
+                            <label for="apellido" class="form-label"> Subject</label>
+                            <input type="text" class="form-control" id="comentario" value="" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">¡Campo válido!</div>
+                            <div class="invalid-tooltip">Debe completar los datos.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label"> Message </label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                required></textarea>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">¡Campo válido!</div>
+                            <div class="invalid-tooltip">Debe completar los datos.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="g-recaptcha" data-sitekey="6LfUIgQhAAAAAFOevQRjy7J9b74-oc-tqwpxjRjj" ;> </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3">
+                                <label class="form-check-label" for="invalidCheck3">
+                                    Send me a copy of this message.
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary fw-bold float-end" type="submit">Send message</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--How to play-->
-    <div>
-        <h3>In order to play, use the space bar!!!</h3>
 
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhOrKZoWZwOaeBxg-W2RuZVEICTM-tGI0ffA&usqp=CAU"
-            class="img-thumbnail" alt="...">
-    </div>
+
 
 </body>
 <!--Footer-->
@@ -109,5 +126,10 @@
 </footer>
 
 <script src="/static/js/scripts.js"></script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
 
 </html>

@@ -1,10 +1,11 @@
 #Import libraries
 import os
 from flask import Flask, render_template
+from pyquery import PyQuery as pq
 
 
 app = Flask(__name__)
-app.secret_key = "s3cr3t"
+app.secret_key = "LC"
 app.debug = False
 app._static_folder = os.path.abspath("templates/static/")
 
