@@ -12,7 +12,7 @@
           event.preventDefault()
           event.stopPropagation()
         }else {
-            alert('Datos enviados!')
+            alert('Message sent!')
         }
         form.classList.add('was-validated')
       }, false)

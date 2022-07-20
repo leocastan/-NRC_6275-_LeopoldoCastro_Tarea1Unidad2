@@ -9,10 +9,10 @@ app.secret_key = "LC"
 app.debug = False
 app._static_folder = os.path.abspath("templates/static/")
 
-#Funcion controladora para mostrar la página principal
-#Definicion de la ruta por defecto
+#Function to show the main page
+#DDefault path definition
 @app.route("/", methods=["GET"])
-#Llamar a index
+#Call the index
 def index():
     """
         Creates the index page with all of its attributes.
