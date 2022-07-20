@@ -1,10 +1,9 @@
 (function () {
   'use strict'
 
-  // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+  // Get the DOM where we want to apply Bootstrap validation
   var forms = document.querySelectorAll('.needs-validation')
 
-  //Recorremos los forms y evitamos el envío sin validacion
   Array.prototype.slice.call(forms)
     .forEach(function (form) {
       form.addEventListener('submit', function (event) {
